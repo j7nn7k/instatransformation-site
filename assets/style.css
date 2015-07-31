@@ -297,10 +297,10 @@ body {
   background: #CDDC39;
 }
 .content-feature:nth-child(2) {
-  background: #F54554;
+  background: #afb612;
 }
 .content-feature:nth-child(3) {
-  background: #F96141;
+  background: #B7C534;
 }
 .content-feature:hover {
   cursor: pointer;
