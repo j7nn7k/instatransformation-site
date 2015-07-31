@@ -141,6 +141,12 @@ body {
   text-align: center;
   width: 50%;
 }
+
+.logo {
+    width: 30%;
+    margin: 40px 0 0 0;
+}
+
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .content-left {
     padding: 0 20px;
@@ -165,7 +171,7 @@ body {
 .app-headline {
   font-size: 48px;
   line-height: 58px;
-  margin: 85px 0 10px 0;
+  margin: 45px 0 10px 0;
 }
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .app-headline {
