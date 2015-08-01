@@ -1,3 +1,33 @@
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return results[1] || 0;
+    }
+}
+
+function replaceAttributionParameters(){
+	var source = $.urlParam('_s');
+	var medium = $.urlParam('_m');
+	var campaign = $.urlParam('_c');
+
+	var storeLink = $('.dynamic-ref-link').attr('href');
+
+	if (source != null){
+		storeLink = storeLink.replace('instatransformation-homepage', source);
+	}
+	if (medium != null){
+		storeLink = storeLink.replace('web', medium);
+	}
+	if (campaign != null){
+		storeLink = storeLink.replace('none', campaign);
+	}
+
+	$('.dynamic-ref-link').attr('href', storeLink);
+}
+
 jQuery(function($){
 	var handler = function(){
 		$( this ).addClass( 'open' ).siblings().addClass( 'hide' );
@@ -30,4 +60,6 @@ jQuery(function($){
 	$( 'body' ).on( "click tap", ".content-feature-gallery-overlay", function(){
 		$( '.content-feature-gallery-overlay' ).fadeOut();
 	});
+
+	replaceAttributionParameters();
 });
