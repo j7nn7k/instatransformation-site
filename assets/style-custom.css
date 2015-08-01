@@ -10,3 +10,23 @@ h2 {
 h3 {
 	font-size: 32px;
 }
+
+.app-subheadline {
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+
+.content-left-appdevice-small {
+	display: none;
+}
+
+/* 1st query: display small device with screenshot on desktop when the browser window is wide and low */
+/* 2nd query: display small device with screenshot on large phones, on small phones the screenshot is hidden*/
+@media only screen and (min-width: 1000px) and (max-height: 850px) , only screen and (max-width: 449px) and (min-height: 620px){
+	.content-left-appdevice-big {
+    	display: none;
+	}
+	.content-left-appdevice-small {
+    	display: inherit;
+	}
+}
